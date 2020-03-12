@@ -21,8 +21,7 @@ def search_in_haystack(directory, treefile, hashfile):
         h = phash.compute(cv2.imread(str(f)))
         ih = tree.get_nearest_neighbor(h)
         ihb = ih[1].tobytes()
-        print("Match: {} : {}".format(f, hashes[ihb]))
-
+        print("Match: {} : {}".format(str(hashes[ihb][0]), f))
 
 parser = argparse.ArgumentParser(description="Search for image in hash/tree")
 parser.add_argument('tree', help="VPTree file path")
